@@ -9,7 +9,10 @@ template <typename BidirectionalIter>
 void my_reverse(BidirectionalIter first, BidirectionalIter last)
 {
     vector<T>::iterator it;
-    for(it = first; first != last;)
+    for(it = first; first != last; it++)
+    {
+        
+    }
 }
 
 using namespace std;
