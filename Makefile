@@ -5,5 +5,5 @@ week2:
 week3:
 	g++ -std=c++11 -Wall -Werror -pedantic Week3.cpp
 clean:
-	rm *.o
+	rm -fv
 	
