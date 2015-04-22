@@ -26,6 +26,7 @@ int main() {
     
     cout << "Exercise 2" << endl;
     cout << "Found: " << test.find(14)->data << endl;
+    cout << "Found: " << test.find(10)->data << endl;
     assert(test.find(15) == 0);
     
     return 0;

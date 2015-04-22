@@ -25,6 +25,22 @@ class Tree {
             
             return n;
         }
+        Node* find(T value, Node* p) // find helper function
+        {
+        	if(!p) return 0;
+        	if(p->data == value)
+        	{
+        		return p;
+        	}
+        	else if(value < p->data) 
+        	{
+        		return find(value, p->left);
+        	}
+        	else
+        	{
+        		return find(value, p->right);
+        	}
+        }
     
     public:
         Tree():root(0) { }
@@ -89,22 +105,14 @@ class Tree {
         	}
         }
         
-        Node* find(T value, Node* p)
-        {
-        	if(!p) return 0;
-        	if(p->data == value)
-        	{
-        		return p;
-        	}
-        	else if(value < p->data) 
-        	{
-        		return find(value, p->left);
-        	}
-        	else
-        	{
-        		return find(value, p->right);
-        	}
-        }
+        // T total(Tree<T> tr)
+        // {
+        // 	return total(root);
+        // }
+        // T total(Node *n)
+        // {
+        	
+        // }
 };
  
  
