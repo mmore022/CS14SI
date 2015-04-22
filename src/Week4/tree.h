@@ -76,6 +76,35 @@ class Tree {
         	}
         	return mx;
         }
+        
+        Node* find(T value)
+        {
+        	if(root->data == value)
+        	{
+        		return root;
+        	}
+        	else
+        	{
+        		return find(value, root);
+        	}
+        }
+        
+        Node* find(T value, Node* p)
+        {
+        	if(!p) return 0;
+        	if(p->data == value)
+        	{
+        		return p;
+        	}
+        	else if(value < p->data) 
+        	{
+        		return find(value, p->left);
+        	}
+        	else
+        	{
+        		return find(value, p->right);
+        	}
+        }
 };
  
  

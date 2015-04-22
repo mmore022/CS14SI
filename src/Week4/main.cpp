@@ -1,5 +1,6 @@
 #include <iostream>
 #include "tree.h"
+#include <assert.h>
  
 using namespace std;
  
@@ -22,6 +23,10 @@ int main() {
     cout << "Exercise 1" << endl;
     cout << "max: " << test.min()->data << endl;
     cout << "min: " << test.max()->data << endl;
+    
+    cout << "Exercise 2" << endl;
+    cout << "Found: " << test.find(14)->data << endl;
+    assert(test.find(15) == 0);
     
     return 0;
 }
