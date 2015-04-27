@@ -14,6 +14,10 @@ int main() {
     test.push(11);
     test.push(20);
     test.push(1);
+    test.push(3);
+    test.push(6);
+    test.push(2);
+    test.push(133);
     
     test.print();
     
@@ -28,6 +32,21 @@ int main() {
     cout << "Found: " << test.find(14)->data << endl;
     cout << "Found: " << test.find(10)->data << endl;
     assert(test.find(15) == 0);
+    
+    cout << "Testing total function" << endl;
+    cout << test.total() << endl;
+    
+    
+    Tree<int> test1;
+    test1.push(40);
+    test1.push(53);
+    
+    cout << test1.total() << endl;
+    
+    Tree<string> test2;
+    test2.push("hello");
+    test2.push("tree");
+    cout << test2.total() << endl;
     
     return 0;
 }

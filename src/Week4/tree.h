@@ -25,6 +25,7 @@ class Tree {
             
             return n;
         }
+        
         Node* find(T value, Node* p) // find helper function
         {
         	if(!p) return 0;
@@ -39,6 +40,18 @@ class Tree {
         	else
         	{
         		return find(value, p->right);
+        	}
+        }
+        
+        T total_(Node *n)
+        {
+        	if(!n)
+        	{
+        	    return T();
+        	}
+        	else
+        	{
+        	    return n->data + total_(n->left) + total_(n->right);
         	}
         }
     
@@ -105,14 +118,11 @@ class Tree {
         	}
         }
         
-        // T total(Tree<T> tr)
-        // {
-        // 	return total(root);
-        // }
-        // T total(Node *n)
-        // {
-        	
-        // }
+        T total()
+        {
+        	return total_(root);
+        }
+        
 };
  
  
