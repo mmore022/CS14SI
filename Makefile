@@ -10,6 +10,10 @@ week3: clean
 week4: clean
 	mkdir bin
 	g++ -std=c++11 -Wall -Werror -pedantic src/Week4/main.cpp -o bin/week4
+week5: clean
+	mkdir bin
+	g++ -std=c++11 -Wall -Werror -pedantic src/Week5/main.cc -o bin/week5
+	cp src/Week5/words.txt bin/
 clean:
 	rm -fvr bin/
 	
