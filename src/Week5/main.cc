@@ -16,6 +16,16 @@ std::map<std::string, unsigned int> freq_map(std::vector<std::string> words)
 	return m;
 }
 
+std::vector<std::string> top_n(std::map<std::string, unsigned int> freq_map, unsigned int n = 5)
+{
+	// std::vector<std::Pair<std::string, unsigned int>> vctr;
+	// for(auto it = freq_map.begin(); it != freq_map.end(); ++it)
+	// {
+	// 	Pair<std::string, unsigned int> p(*it)
+	// 	vctr.push_back();
+	// }
+}
+
 int main(int argc, char* argv[] )
 {
 	vector<string> v;
@@ -53,6 +63,6 @@ int main(int argc, char* argv[] )
 	{
 		cout << itt->first << ' ' << itt->second << endl;
 	}
-     
+	
 	return 0;
 }
