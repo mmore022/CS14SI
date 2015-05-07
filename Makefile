@@ -14,6 +14,12 @@ week5: clean
 	mkdir bin
 	g++ -std=c++11 -Wall -Werror -pedantic src/Week5/main.cc -o bin/week5
 	cp src/Week5/words.txt bin/
+week6A: clean
+	mkdir bin
+	g++ -std=c++11 -Wall -Werror -pedantic src/Week6/main.cc -o bin/week6A
+week6H: clean
+	mkdir bin
+	g++ -std=c++11 -Wall -Werror -pedantic src/Week6/main2.cc -o bin/week6H
 clean:
 	rm -fvr bin/
 	
