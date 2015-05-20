@@ -23,6 +23,10 @@ week6H: clean
 week7: clean
 	mkdir bin
 	g++ -std=c++11 -Wall -Werror -pedantic src/Week7/main.cc -o bin/week7
+week8: clean
+	mkdir bin
+	g++ -std=c++11 -Wall -Werror -pedantic src/Week8/main.cc -o bin/week8
+	bin/./week8
 clean:
 	rm -fvr bin/
 	
