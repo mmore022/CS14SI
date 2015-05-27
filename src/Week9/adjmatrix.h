@@ -9,32 +9,47 @@ using namespace std;
 class AdjacencyMatrix{
     private:
         int n;
-        vector<vector<int>> adj;
+        int **adj;
         bool *visited;
     public:
         AdjacencyMatrix(int n)
         {
+            adj = new int*[n]; // create matrix
             for(int i = 0; i < n; ++i)
             {
-                vector<int> temp;
-                adj.push_back(temp); // push back an empty vector
+                adj[i] = new int[n];
+            }
+            for(int i = 0; i < n; ++i) // make all values 0
+            {
                 for(int j = 0; j < n; ++j)
                 {
-                    adj.at(i).push_back(0); // push back 0s
+                    adj[i][j] = 0;
                 }
+            }
+            visited = new bool[n]; // create visited array
+            for(int i = 0; i < n; ++i) // initialize values to 0
+            {
+                visited[i] = 0;
             }
             this->n = n;
         }
         ~AdjacencyMatrix()
         {
-            for(int i = 0; i < n; ++i)
+            for(int i = 0; i < n; ++i) // delete each array
             {
-                adj.at(i).clear();
+                delete []adj[i];
             }
+            delete []adj;
+            delete []visited; // delete the visited array
         }
         void add_edge(int origin, int destin, int weight)
         {
-            adj.at(origin).at(destin) = weight;
+            if(origin >= n || destin >= n) // check if possible to add edge
+            {
+                cout << "Could not add edge." << endl;
+                return;
+            }
+            adj[origin][destin] = weight; // add edge
         }
         void display()
         {
@@ -42,12 +57,12 @@ class AdjacencyMatrix{
             {
                 for(int j = 0; j < n; ++j)
                 {
-                    cout << adj.at(i).at(j) << ' ';
+                    cout << adj[i][j] << ' ';
                 }
                 cout << endl;
             }
         }
-        /* etc. */
+
 };
 
 #endif
